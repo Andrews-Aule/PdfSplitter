@@ -1,25 +1,32 @@
-# Node (residuo, non necessario al programma)
+# ── File necessari per usare l'app (NON ignorati) ──────────────────────────
+# pdf_splitter.py      → sorgente principale
+# pdf_splitter.svg     → icona sorgente
+# pdf_splitter.desktop → collegamento per il menu GNOME
+# assets/              → icone PNG precompilate per il binario
+# README.md
+
+# ── Residui Node.js (non servono) ──────────────────────────────────────────
 node_modules/
 package.json
 package-lock.json
 
-# Virtual environment Python (residuo)
+# ── Ambiente virtuale Python ────────────────────────────────────────────────
 .venv/
 
-# Claude Code
+# ── Claude Code ─────────────────────────────────────────────────────────────
 .claude/
 
-# File di sistema
-.DS_Store
-__pycache__/
-*.pyc
-*.pyo
-
-# PyInstaller
+# ── Artefatti di build PyInstaller ──────────────────────────────────────────
 build/
 dist/
 *.spec
 
-# File temporanei
+# ── Cache Python ────────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+
+# ── File temporanei ──────────────────────────────────────────────────────────
 *.tmp
 *.log
+.DS_Store

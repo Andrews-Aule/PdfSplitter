@@ -6,6 +6,7 @@ Comment=Dividi un PDF in parti di dimensione scelta
 Exec=/home/andrea/Documents/PdfSplitter/dist/pdf-splitter
 Icon=pdf-splitter
 StartupWMClass=pdf-splitter
+StartupNotify=true
 Terminal=false
 Categories=Office;Utility;
 Keywords=pdf;split;dividi;

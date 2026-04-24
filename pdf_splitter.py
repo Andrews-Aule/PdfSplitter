@@ -132,12 +132,39 @@ _ICON_B64 = (
 _ICON_NAME = "pdf-splitter"
 
 
+def _bundle_path(relative: str) -> Path:
+    """Return the path to a file bundled inside the PyInstaller binary, or the
+    source-tree path when running as a plain script."""
+    import sys
+    base = Path(getattr(sys, "_MEIPASS", Path(__file__).parent))
+    return base / relative
+
+
 def _install_icon() -> None:
-    icon_dir = Path.home() / ".local/share/icons/hicolor/scalable/apps"
-    icon_dir.mkdir(parents=True, exist_ok=True)
-    icon_path = icon_dir / f"{_ICON_NAME}.svg"
-    if not icon_path.exists():
-        icon_path.write_bytes(base64.b64decode(_ICON_B64))
+    svg_dir = Path.home() / ".local/share/icons/hicolor/scalable/apps"
+    svg_dir.mkdir(parents=True, exist_ok=True)
+    svg_path = svg_dir / f"{_ICON_NAME}.svg"
+    if not svg_path.exists():
+        svg_path.write_bytes(base64.b64decode(_ICON_B64))
+
+    # Install PNG sizes bundled with the binary
+    for size in (16, 32, 48, 64, 128, 256, 512):
+        src = _bundle_path(f"icons/pdf-splitter-{size}.png")
+        if src.exists():
+            dst_dir = Path.home() / f".local/share/icons/hicolor/{size}x{size}/apps"
+            dst_dir.mkdir(parents=True, exist_ok=True)
+            dst = dst_dir / f"{_ICON_NAME}.png"
+            if not dst.exists():
+                import shutil
+                shutil.copy2(src, dst)
+
+    # Refresh icon cache
+    subprocess.run(
+        ["gtk-update-icon-cache", "-f", "-t",
+         str(Path.home() / ".local/share/icons/hicolor")],
+        capture_output=True,
+    )
+
     display = Gdk.Display.get_default()
     if display:
         theme = Gtk.IconTheme.get_for_display(display)
@@ -214,7 +241,7 @@ def split_pdf(pdf_path, out_dir, max_bytes, progress_cb, cancelled_flag, lang="e
 class PdfSplitterApp(Gtk.Application):
     def __init__(self):
         super().__init__(
-            application_id="com.example.pdfsplitter",
+            application_id="com.example.pdf-splitter",
             flags=Gio.ApplicationFlags.FLAGS_NONE,
         )
 
