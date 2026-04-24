@@ -1,5 +1,58 @@
 # PDF Splitter
 
+Desktop app for Ubuntu that splits a PDF file into multiple files of a chosen maximum size.
+
+## Requirements
+
+- Ubuntu (or any Linux distro with GNOME)
+- Python 3 with `python3-gi` (GTK4) — installed by default on Ubuntu
+- Ghostscript — installed by default on Ubuntu
+
+To verify:
+```bash
+python3 -c "import gi; gi.require_version('Gtk', '4.0'); from gi.repository import Gtk; print('GTK4 ok')"
+gs --version
+```
+
+## Run
+
+```bash
+python3 pdf_splitter.py
+```
+
+### Add to GNOME application menu
+
+```bash
+cp pdf_splitter.desktop ~/.local/share/applications/
+update-desktop-database ~/.local/share/applications/
+```
+
+After this step the app appears by searching "PDF Splitter" in the GNOME overview.
+
+## Usage
+
+1. **Input PDF file** — select the PDF to split
+2. **Destination folder** — where to save the output files (default: same folder as the PDF)
+3. **Maximum size** — set the limit in MB or KB
+4. Click **Dividi PDF**
+
+Output files are named `filename_parte001.pdf`, `filename_parte002.pdf`, etc.
+
+## How it works
+
+For each part it uses a binary search to find the maximum number of pages that fits within the chosen size limit, maximising pages per file without exceeding the threshold. PDF manipulation is handled by Ghostscript.
+
+## Files
+
+| File | Description |
+|------|-------------|
+| `pdf_splitter.py` | Main application source |
+| `pdf_splitter.desktop` | Shortcut for the GNOME application menu |
+
+---
+
+# PDF Splitter _(Italiano)_
+
 App desktop per Ubuntu che divide un file PDF in più file di dimensione massima scelta.
 
 ## Requisiti
