@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- Left output document -->
+  <rect x="6" y="38" width="42" height="54" rx="5" ry="5" fill="#5b9bd5" />
+  <rect x="6" y="38" width="42" height="54" rx="5" ry="5" fill="none" stroke="#3a7abf" stroke-width="2"/>
+  <polygon points="33,38 48,38 48,53" fill="#3a7abf"/>
+  <line x1="13" y1="60" x2="41" y2="60" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <line x1="13" y1="70" x2="41" y2="70" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <line x1="13" y1="80" x2="30" y2="80" stroke="white" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Right output document -->
+  <rect x="80" y="38" width="42" height="54" rx="5" ry="5" fill="#5b9bd5" />
+  <rect x="80" y="38" width="42" height="54" rx="5" ry="5" fill="none" stroke="#3a7abf" stroke-width="2"/>
+  <polygon points="107,38 122,38 122,53" fill="#3a7abf"/>
+  <line x1="87" y1="60" x2="115" y2="60" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <line x1="87" y1="70" x2="115" y2="70" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <line x1="87" y1="80" x2="104" y2="80" stroke="white" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Center PDF source document -->
+  <rect x="30" y="14" width="68" height="86" rx="6" ry="6" fill="#e8f0fb" />
+  <rect x="30" y="14" width="68" height="86" rx="6" ry="6" fill="none" stroke="#3a7abf" stroke-width="2.5"/>
+  <polygon points="77,14 98,14 98,35" fill="#c0d4f0"/>
+  <line x1="77" y1="14" x2="77" y2="35" stroke="#3a7abf" stroke-width="1.5"/>
+  <line x1="77" y1="35" x2="98" y2="35" stroke="#3a7abf" stroke-width="1.5"/>
+
+  <!-- PDF label -->
+  <rect x="36" y="42" width="40" height="18" rx="3" fill="#e05c5c"/>
+  <text x="56" y="55" font-family="sans-serif" font-weight="bold" font-size="11" fill="white" text-anchor="middle">PDF</text>
+
+  <!-- Lines on source doc -->
+  <line x1="38" y1="72" x2="90" y2="72" stroke="#aac3e8" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="38" y1="81" x2="90" y2="81" stroke="#aac3e8" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="38" y1="90" x2="70" y2="90" stroke="#aac3e8" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Split arrows -->
+  <line x1="29" y1="110" x2="16" y2="95" stroke="#e05c5c" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="16,95 10,100 22,103" fill="#e05c5c"/>
+
+  <line x1="99" y1="110" x2="112" y2="95" stroke="#e05c5c" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="112,95 118,100 106,103" fill="#e05c5c"/>
+</svg>
