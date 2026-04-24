@@ -1,0 +1,20 @@
+# Node (residuo, non necessario al programma)
+node_modules/
+package.json
+package-lock.json
+
+# Virtual environment Python (residuo)
+.venv/
+
+# Claude Code
+.claude/
+
+# File di sistema
+.DS_Store
+__pycache__/
+*.pyc
+*.pyo
+
+# File temporanei
+*.tmp
+*.log
